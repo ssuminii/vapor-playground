@@ -1,7 +1,8 @@
 import './App.css'
+import { Button } from '@vapor-ui/core'
 
 function App() {
-  return <>Main</>
+  return <Button>Open Dialog</Button>
 }
 
 export default App
