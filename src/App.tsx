@@ -7,7 +7,9 @@ function App() {
     <>
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button>클릭</Button>
+          <Button color='secondary' size='xl'>
+            클릭
+          </Button>
         </Dialog.Trigger>
 
         <Dialog.Portal>
