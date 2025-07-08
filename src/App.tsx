@@ -1,16 +1,31 @@
 import './App.css'
-import { Button } from '@vapor-ui/core'
+import { Button, Dialog } from '@vapor-ui/core'
 import { ThemeToggleButton } from './components/ThemeToggleButton'
-import { useState } from 'react'
-import Dialog from './components/Dialog/Dialog'
 
 function App() {
-  const [isOpen, setIsOpen] = useState<boolean>(false)
-
   return (
     <>
-      <Button onClick={() => setIsOpen(true)}>Open Dialog</Button>
-      {isOpen && <Dialog setIsOpen={setIsOpen} />}
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <Button>클릭</Button>
+        </Dialog.Trigger>
+
+        <Dialog.Portal>
+          <Dialog.Overlay />
+          <Dialog.Content>
+            <Dialog.Header></Dialog.Header>
+            <Dialog.Body>
+              <Dialog.Title>test</Dialog.Title>
+            </Dialog.Body>
+            <Dialog.Footer>
+              <Dialog.Close asChild>
+                <Button>네</Button>
+              </Dialog.Close>
+            </Dialog.Footer>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+
       <ThemeToggleButton />
     </>
   )
